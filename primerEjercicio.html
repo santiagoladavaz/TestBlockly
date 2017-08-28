@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Blockly Demo: Fixed Blockly</title>
+  <script src="blockly/blockly_compressed.js"></script>
+  <script src="blockly/blocks_compressed.js"></script>
+  <script src="blockly/javascript_compressed.js"></script>
+  <script src="blockly/msg/js/en.js"></script>
+  <script src="blockly/customblocks.js"></script>
+
+  <style>
+    body {
+      background-color: #fff;
+      font-family: sans-serif;
+    }
+    h1 {
+      font-weight: normal;
+      font-size: 140%;
+    }
+
+    #circle{
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+        background-color: white;
+        border: solid 1px black;
+        position:absolute;
+        float: right;
+      }
+    
+  </style>
+</head>
+<body>
+
+  <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+
+     <xml id="toolbox" style="display: none;">
+                    <category name="Logic">
+                      <block type="semaforo">
+                        <field name="color">Rojo</field>
+                        <field name="color">Amarillo</field>
+                        <field name="color">Verde</field>
+                        <field name="switch">Prendido</field>
+                      </block>
+                    </category>
+      </xml>
+                 
+      <div id="circle"></div>
+
+      <button id="btnEjecutar"  onclick="runCode();">ejecutar</button>
+
+  <script>
+    var workspace = Blockly.inject('blocklyDiv',
+        {media: 'blockly/media/',
+         toolbox: document.getElementById('toolbox')});
+
+
+    function runCode(){
+          window.LoopTrap = 1000;
+          Blockly.JavaScript.INFINITE_LOOP_TRAP = 
+              'if(--window.LoopTrap == 0) throw "Inifinite Loop";\n';
+          var code = Blockly.JavaScript.workspaceToCode(workspace);
+          Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+          try{
+            eval(code);
+          }catch(e){
+            alert(e);
+          }
+        }
+  </script>
+
+</body>
+</html>

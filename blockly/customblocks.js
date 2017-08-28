@@ -22,10 +22,10 @@ Blockly.JavaScript['semaforo'] = function(block) {
   var dropdown_switch = block.getFieldValue('Switch');
   var statements_left = Blockly.JavaScript.statementToCode(block, 'Left');
   if(dropdown_switch == "prender"){
-    var code = "document.getElementbyId('circle').style.backGroundColor='red';";  
+    document.getElementById('circle').style.backgroundColor='red';  
   }
   if(dropdown_switch == "apagar"){
-    var code = "document.getElementbyId('circle').style.backGroundColor='white';";  
+    var code = "document.getElementById('circle').style.backgroundColor='white';";  
   }
-  return code;
+  return 1;
 };
