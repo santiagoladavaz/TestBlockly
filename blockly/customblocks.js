@@ -25,7 +25,7 @@ Blockly.JavaScript['semaforo'] = function(block) {
     document.getElementById('circle').style.backgroundColor='red';  
   }
   if(dropdown_switch == "apagar"){
-    var code = "document.getElementById('circle').style.backgroundColor='white';";  
+    document.getElementById('circle').style.backgroundColor='white';  
   }
   return 1;
 };
