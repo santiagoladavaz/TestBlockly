@@ -10,21 +10,21 @@
     <title>Arduinito</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
+    <link href="../css/freelancer.min.css" rel="stylesheet">
 
-     <script src="blockly/blockly_compressed.js"></script>
-  <script src="blockly/blocks_compressed.js"></script>
-  <script src="blockly/javascript_compressed.js"></script>
-  <script src="blockly/msg/js/en.js"></script>
-  <script src="blockly/customblocks.js"></script>
+  <script src="../blockly/blockly_compressed.js"></script>
+  <script src="../blockly/blocks_compressed.js"></script>
+  <script src="../blockly/javascript_compressed.js"></script>
+  <script src="../blockly/msg/js/en.js"></script>
+  <script src="../blockly/customblocks.js"></script>
     <style type="text/css">
       
 
@@ -43,12 +43,12 @@
   </head>
 
 
-  <body id="page-top">
+  <body id="page-top"  ng-app="primerEj" ng-controller="primerEjercicioController">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Arduinito Educativo</a>
+        <a class="navbar-brand js-scroll-trigger" href="../index.html">Arduinito Educativo</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -56,10 +56,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Actividades</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">Acerca</a>
+              <a class="nav-link js-scroll-trigger" href="../index.html#portfolio">Actividades</a>
             </li>
           </ul>
         </div>
@@ -75,7 +72,7 @@
           <table style="width:100%;">
             <tr>
               <td style="width:25%;">
-                <p>Aca va una descripcion del ejercicio</p>
+                <p>Aca va una descripcion del ejercicio {{name}}</p>
               </td>
               <td style="width:70%;">
                 <div id="blocklyDiv" style="height: 480px; width: 100%;"></div>      
@@ -92,7 +89,7 @@
                 </xml>
               </td>
               <td style="width:5%;">
-                <button type="button" class="btn btn-success" style="height: 480px;" id="btnEjecutar"  onclick="runCode();">Ejecutar</button>
+                <button type="button" class="btn btn-success" style="height: 480px;" id="btnEjecutar"  ng-click="runCode()">Ejecutar</button>
               </td>
             </tr>
           </table>  
@@ -105,41 +102,18 @@
    
     
 
-    <!-- Footer -->
+     <!-- Footer -->
     <footer class="text-center">
       <div class="footer-above">
         <div class="container">
           <div class="row">
-           
             <div class="footer-col col-md-4">
-              <h3>Around the Web</h3>
-              <ul class="list-inline">
-                <li class="list-inline-item">
-                  <a class="btn-social btn-outline" href="#">
-                    <i class="fa fa-fw fa-facebook"></i>
+            </div>
+            <div class="footer-col col-md-4">
+              <h3>En la Web</h3>
+                 <a href="http://github.com/santiagoladavaz/Arduinito">
+                    <i class="fa fa-github fa-5x"></i>
                   </a>
-                </li>
-                <li class="list-inline-item">
-                  <a class="btn-social btn-outline" href="#">
-                    <i class="fa fa-fw fa-google-plus"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a class="btn-social btn-outline" href="#">
-                    <i class="fa fa-fw fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a class="btn-social btn-outline" href="#">
-                    <i class="fa fa-fw fa-linkedin"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a class="btn-social btn-outline" href="#">
-                    <i class="fa fa-fw fa-dribbble"></i>
-                  </a>
-                </li>
-              </ul>
             </div>
             
           </div>
@@ -149,7 +123,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              Copyright &copy; Your Website 2017
+              Copyright &copy; Arduinito 2017
             </div>
           </div>
         </div>
@@ -166,42 +140,28 @@
   </div>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/popper/popper.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    
+    
 
   
     <!-- Custom scripts for this template -->
-    <script src="js/freelancer.min.js"></script>
-
+    <script src="../js/freelancer.min.js"></script>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+    <script type="text/javascript" src="../js/controller/primerEjercicioController.js"></script>
 	  
 
     <script>
-    var workspace = Blockly.inject('blocklyDiv',
-        {media: 'blockly/media/',
-         toolbox: document.getElementById('toolbox')});
-
-
-    function runCode(){
-          window.LoopTrap = 1000;
-          Blockly.JavaScript.INFINITE_LOOP_TRAP = 
-              'if(--window.LoopTrap == 0) throw "Inifinite Loop";\n';
-          var code = Blockly.JavaScript.workspaceToCode(workspace);
-          Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
-          try{
-            eval(code);
-          }catch(e){
-            alert(e);
-          }
-        }
-  </script>
+      var workspace = Blockly.inject('blocklyDiv',
+          {media: '../blockly/media/',
+           toolbox: document.getElementById('toolbox')});
+      </script>
   
   </body>
 
